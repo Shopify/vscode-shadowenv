@@ -1,0 +1,4 @@
+up:
+  - node:
+      version: v10.11.0
+      yarn: true
