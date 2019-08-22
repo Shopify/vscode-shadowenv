@@ -23,6 +23,7 @@ let visiblyLoadShadowenv = () => loadShadowenv({ showSuccess: true });
 
 let loadShadowenv = (options: { showSuccess: boolean }) => {
     command.hook(shadowenvData).then((json) => {
+        if (json == "") return;
         let parsed = JSON.parse(json);
 
         let exported = parsed['exported'];
