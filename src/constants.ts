@@ -28,6 +28,7 @@ export const messages = {
     assign: {
         success: `${shadowenv.name} activated`,
         warn: `${shadowenv.name}: Your shadowenv is not trusted!`,
-        trust: `${shadowenv.name}: Would you like to trust this shadowenv?`
+        trust: `${shadowenv.name}: Would you like to trust this shadowenv?`,
+        visibilityDuration: 3000 // milliseconds
     }
 };

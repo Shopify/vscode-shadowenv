@@ -23,7 +23,7 @@ let visiblyLoadShadowenv = () => loadShadowenv({ showSuccess: true });
 
 let loadShadowenv = (options: { showSuccess: boolean }) => {
     command.hook(shadowenvData).then((json) => {
-        if (json == "") return;
+        if (json == "") return false;
         let parsed = JSON.parse(json);
 
         let exported = parsed['exported'];
@@ -40,9 +40,11 @@ let loadShadowenv = (options: { showSuccess: boolean }) => {
                 vscode.window.showWarningMessage(constants.messages.warn.unexpectedUnexportedValue + name);
             }
         }
-    }).then(() => {
-        if (options.showSuccess) {
-            return vscode.window.showInformationMessage(constants.messages.assign.success);
+        return true
+    }).then((didActivate) => {
+        if (didActivate && options.showSuccess) {
+            vscode.window.setStatusBarMessage(constants.messages.assign.success, constants.messages.assign.visibilityDuration);
+            return "";
         }
     }, (err) => {
         if (err.message.indexOf(`untrusted`) !== -1) {
