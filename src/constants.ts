@@ -3,7 +3,6 @@
 export const shadowenv = {
     name: 'shadowenv',
     cmd: 'shadowenv',
-    shadowenvData: '__shadowenv_data'
 };
 
 export const vscode = {

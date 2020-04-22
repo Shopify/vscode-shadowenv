@@ -36,5 +36,5 @@ export class Command {
     // Public
     version = () => this.exec({ argv: ['--version'] });
     trust = () => this.exec({ argv: ['trust'] });
-    hook = (shadowenvData: string) => this.exec({ argv: ['hook', '--json', shadowenvData] });
+    hook = () => this.exec({ argv: ['hook'] });
 }

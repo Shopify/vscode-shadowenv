@@ -4,7 +4,6 @@ import * as vscode from 'vscode';
 import * as constants from './constants';
 import { Command } from './command';
 
-let shadowenvData = "";
 let command = new Command(vscode.workspace.rootPath);
 let watcher = vscode.workspace.createFileSystemWatcher(command.shadowlispGlob);
 
@@ -22,7 +21,7 @@ let quietlyLoadShadowenv = () => loadShadowenv({ showSuccess: false });
 let visiblyLoadShadowenv = () => loadShadowenv({ showSuccess: true });
 
 let loadShadowenv = (options: { showSuccess: boolean }) => {
-    command.hook(shadowenvData).then((json) => {
+    command.hook().then((json) => {
         if (json == "") return false;
         let parsed = JSON.parse(json);
 
@@ -31,15 +30,6 @@ let loadShadowenv = (options: { showSuccess: boolean }) => {
             process.env[name] = exported[name];
         }
 
-        let unexported = parsed['unexported'];
-        for (let name in unexported) {
-            let value = unexported[name];
-            if (name == constants.shadowenv.shadowenvData) {
-                shadowenvData = unexported[name];
-            } else {
-                vscode.window.showWarningMessage(constants.messages.warn.unexpectedUnexportedValue + name);
-            }
-        }
         return true
     }).then((didActivate) => {
         if (didActivate && options.showSuccess) {
