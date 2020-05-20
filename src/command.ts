@@ -36,5 +36,5 @@ export class Command {
     // Public
     version = () => this.exec({ argv: ['--version'] });
     trust = () => this.exec({ argv: ['trust'] });
-    hook = () => this.exec({ argv: ['hook'] });
+    hook = () => this.exec({ argv: ['hook', '--json'] });
 }
