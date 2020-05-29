@@ -47,3 +47,19 @@ In order to run a command press `cmd+shift+p` to view the Command Palette. There
 
 For any bugs and feature requests please open an issue. For code contributions please create a pull
 request. Enjoy!
+
+## Releasing
+
+1. Make sure you bump the version in `package.json`, update the `CHANGELOG.md`, and tag the new
+   version.
+1. log in to or create account on dev.azure.com
+1. Get @burke or someone else who has done a release to add you to the Shopify publisher
+   (https://marketplace.visualstudio.com/manage/publishers/Shopify)
+1. Click the "I already have an account" button; don't go to portal.azure.com
+1. Click the settings icon right next to your avatar after logged in; Personal Access Tokens
+1. New Token > All Accessible Organizations, Full access
+1. `npm config set prefix ~/nodewhatever`
+1. `npm install -g vsce`
+1. `~/nodewhatever/bin/vsce package`
+1. `vsce login Shopify` (then paste token)
+1. `vsce publish`
