@@ -24,6 +24,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+- Nil.
+
+---
+
+## [0.1.1] - 2020-06-08
+
 - Fix for `shadowenv error: Unexpected token e in JSON at position 0` ([#7](https://github.com/Shopify/vscode-shadowenv/pull/7))
 
 ---
