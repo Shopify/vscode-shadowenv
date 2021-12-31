@@ -41,7 +41,7 @@ up VS Code.
 In order to run a command press `cmd+shift+p` to view the Command Palette. There type:
 
 * `shadowenv trust` to trust and load the local Shadowenv
-* `shadowenv version` to view the current `shadowenv` version
+* `shadowenv --version` to view the current `shadowenv` version
 
 ## Contribute
 
