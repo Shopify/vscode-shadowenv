@@ -50,7 +50,7 @@ request. Enjoy!
 
 ## Releasing
 
-1. Make sure you bump the version in [`package.json`](https://github.com/Shopify/vscode-shadowenv/blob/master/package.json#L5), update the [`CHANGELOG.md`](https://github.com/Shopify/vscode-shadowenv/blob/master/CHANGELOG.md)
+1. Make sure you bump the version in [`package.json`](https://github.com/Shopify/vscode-shadowenv/blob/main/package.json#L5), update the [`CHANGELOG.md`](https://github.com/Shopify/vscode-shadowenv/blob/main/CHANGELOG.md)
 1. [Tag the new version](https://github.com/Shopify/vscode-shadowenv/releases/new)
 1. log in to or create account on dev.azure.com
 1. Get @burke or someone else who has done a release to add you to the Shopify publisher
