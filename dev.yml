@@ -1,4 +1,4 @@
 up:
   - node:
       version: v10.11.0
-      yarn: true
+      package_manager: pnpm@10.33.0
